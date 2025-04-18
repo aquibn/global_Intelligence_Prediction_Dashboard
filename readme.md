@@ -1,7 +1,2 @@
-# Vulnerability Analysis Dashboard
-
-A Flask-based dashboard for analyzing NIST vulnerability data with ML integration.
-
-## Setup
-
-1. Clone repository:
+# global_Intelligence_Prediction_Dashboard
+Visualize global threat trends by integrating multiple data sources.
