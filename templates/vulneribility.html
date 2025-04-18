@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}ML-Powered Vulnerability Analysis{% endblock %}
+{% block content %}
+<h1>ML-Powered Vulnerability Analysis</h1>
+<table>
+    <thead>
+        <tr>
+            <th>CVE ID</th>
+            <th>Environment</th>
+            <th>Attack Vector</th>
+            <th>Input</th>
+            <th>Predicted Impact</th>
+            <th>Confidence</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in vuln_results %}
+        <tr>
+            <td>{{ row.cve_id }}</td>
+            <td>{{ row.environment }}</td>
+            <td>{{ row.attack_vector }}</td>
+            <td>{{ row.input }}</td>
+            <td>{{ row.predicted_impact }}</td>
+            <td>{{ row.confidence }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div>
+    <canvas id="vulnImpactChart" width="600" height="300"></canvas>
+</div>
+<script src="{{ url_for('static', filename='js/chart.js') }}"></script>
+{% endblock %}

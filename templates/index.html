@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Dashboard Overview{% endblock %}
+{% block content %}
+<h1>Dashboard Overview</h1>
+<p>Welcome to the Vulnerability Analysis Dashboard.</p>
+<div>
+    <canvas id="envBarChart" width="600" height="300"></canvas>
+    <canvas id="vectorPieChart" width="600" height="300"></canvas>
+</div>
+<script src="{{ url_for('static', filename='js/chart.js') }}"></script>
+<script>
+    // Example: pass data from Flask to JS using Jinja2
+    // let envLabels = {{ env_labels|tojson }};
+    // let envData = {{ env_data|tojson }};
+    // let vectorLabels = {{ vector_labels|tojson }};
+    // let vectorData = {{ vector_data|tojson }};
+</script>
+{% endblock %}

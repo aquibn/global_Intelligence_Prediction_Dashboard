@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Indicators of Compromise{% endblock %}
+{% block content %}
+<h1>Indicators of Compromise (IOCs)</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Indicator</th>
+            <th>Type</th>
+            <th>MITRE Technique</th>
+            <th>ML Confidence</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for ioc in iocs %}
+        <tr>
+            <td>{{ ioc.indicator }}</td>
+            <td>{{ ioc.type }}</td>
+            <td>{{ ioc.technique }}</td>
+            <td>{{ ioc.confidence }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

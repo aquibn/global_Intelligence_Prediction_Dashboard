@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Reports & ML Results{% endblock %}
+{% block content %}
+<h1>Data Reports & Machine Learning Results</h1>
+<div>
+    <h2>ML Model Metrics</h2>
+    <ul>
+        <li>Accuracy: {{ ml_metrics.accuracy }}</li>
+        <li>F1 Score: {{ ml_metrics.f1 }}</li>
+        <li>Precision: {{ ml_metrics.precision }}</li>
+        <li>Recall: {{ ml_metrics.recall }}</li>
+    </ul>
+</div>
+<div>
+    <h2>Feature Importance</h2>
+    <ul>
+        {% for feature, score in ml_metrics.feature_importance.items() %}
+        <li>{{ feature }}: {{ score }}</li>
+        {% endfor %}
+    </ul>
+</div>
+<div>
+    <h2>Visualization</h2>
+    <canvas id="mlFeatureChart" width="600" height="300"></canvas>
+</div>
+<script src="{{ url_for('static', filename='js/chart.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Upload Data{% endblock %}
+{% block content %}
+<h1>Upload New Data</h1>
+<form method="post" enctype="multipart/form-data">
+    <label for="file-upload">Select CSV/Excel file:</label>
+    <input type="file" id="file-upload" name="file">
+    <button type="submit" class="btn">Upload</button>
+</form>
+{% if upload_status %}
+    <div class="alert">{{ upload_status }}</div>
+{% endif %}
+{% endblock %}

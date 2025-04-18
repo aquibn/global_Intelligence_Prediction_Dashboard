@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Admin Panel{% endblock %}
+{% block content %}
+<h1>Admin/Monitoring Interface</h1>
+<div>
+    <h2>User Management</h2>
+    <ul>
+        {% for user in users %}
+        <li>{{ user.username }} ({{ user.role }})</li>
+        {% endfor %}
+    </ul>
+</div>
+<div>
+    <h2>System Logs</h2>
+    <pre>{{ logs }}</pre>
+</div>
+{% endblock %}

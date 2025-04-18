@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}MITRE ATT&CK Mapping{% endblock %}
+{% block content %}
+<h1>MITRE ATT&CK Mapping</h1>
+<table>
+    <thead>
+        <tr>
+            <th>CVE ID</th>
+            <th>MITRE Tactic</th>
+            <th>MITRE Technique</th>
+            <th>Confidence</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for entry in mitre_data %}
+        <tr>
+            <td>{{ entry.cve_id }}</td>
+            <td>{{ entry.tactic }}</td>
+            <td>{{ entry.technique }}</td>
+            <td>{{ entry.confidence }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
